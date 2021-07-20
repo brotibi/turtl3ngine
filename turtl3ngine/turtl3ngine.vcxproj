@@ -149,15 +149,25 @@
     <ClCompile Include="Example.cpp" />
     <ClCompile Include="Example2.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="ShaderUtils.cpp" />
+    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="Texture2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWindow.h" />
+    <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="ShaderUtils.h" />
+    <ClInclude Include="ShapeConstants.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture2D.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\example1.frag" />
     <None Include="shaders\example1.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Binnie.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
