@@ -103,7 +103,9 @@ int main() {
 		float camZ = cos(glfwGetTime()) * radius;
 
 		
-		camera.setView(cameraPos, cameraPos + cameraFront, cameraUp);
+		//camera.setView(cameraPos, cameraPos + cameraFront, cameraUp);
+		//camera.updateView();
+		camera.setTargetPosition(camera.getPosition() + cameraFront);
 		glm::mat4 view = camera.getCameraView();
 		
 		// note that we're translating the scene in the reverse direction of where we want to move

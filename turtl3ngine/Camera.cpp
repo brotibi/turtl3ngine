@@ -24,3 +24,7 @@ void Camera::setView(glm::vec3 cameraPosition, glm::vec3 targetPosition, glm::ve
 	this->upVector = upVector;
 	this->view = glm::lookAt(cameraPosition, targetPosition, upVector);
 }
+
+void Camera::updateView() {
+	this->view = glm::lookAt(this->getPosition(), this->targetPosition, this->upVector);
+}

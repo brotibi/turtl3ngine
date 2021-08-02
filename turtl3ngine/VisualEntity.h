@@ -30,6 +30,10 @@ public:
 		this->position = newPosition;
 	}
 
+	void translate(glm::vec3 translationVector) {
+		this->position += translationVector;
+	}
+
 	glm::vec3 getPosition() {
 		return this->position;
 	}
