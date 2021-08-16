@@ -11,7 +11,7 @@ class VisualEntity
 {
 private:
 	glm::vec3 position;
-	glm::vec3 angle;
+	glm::vec3 direction;
 	Texture2D* texture;
 	std::vector<VisualEntity>* attachedEntities;
 public:
@@ -39,8 +39,8 @@ public:
 	}
 
 
-	void setAngle(glm::vec3 newAngle) {
-		this->angle = newAngle;
+	void setDirection(glm::vec3 newAngle) {
+		this->direction = newAngle;
 	}
 
 	void addEntity(VisualEntity entity) {

@@ -30,6 +30,9 @@ AppWindow::AppWindow(int width, int height) {
 	GLFWwindow* window;
 	this->width = width;
 	this->height = height;
+
+	this->lastX = width / 2.0f;
+	this->lastY = height / 2.0f;
 	
 	glfwSetErrorCallback(error_callback);
 
@@ -42,7 +45,7 @@ AppWindow::AppWindow(int width, int height) {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-	this->window = glfwCreateWindow(640, 480, "Simple example", NULL, NULL);
+	this->window = glfwCreateWindow(width, height, "Simple example", NULL, NULL);
 
 	if (!this->window)
 	{
