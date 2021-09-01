@@ -149,7 +149,10 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Example.cpp" />
     <ClCompile Include="Example2.cpp" />
+    <ClCompile Include="Example3.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Object\Mesh.cpp" />
+    <ClCompile Include="Object\Model.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="ShaderUtils.cpp" />
     <ClCompile Include="stb_image.cpp" />
@@ -159,6 +162,11 @@
     <ClInclude Include="AppWindow.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ObjectEntity.h" />
+    <ClInclude Include="Object\Mesh.h" />
+    <ClInclude Include="Object\Model.h" />
+    <ClInclude Include="Object\ObjectStructs.h" />
+    <ClInclude Include="PracticeCube.h" />
+    <ClInclude Include="PracticePhongLight.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="ShaderUtils.h" />
     <ClInclude Include="ShapeConstants.h" />
@@ -166,13 +174,18 @@
     <ClInclude Include="Texture2D.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="VisualEntity.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="OBJfiles\demon\demon.mtl" />
     <None Include="shaders\example1.frag" />
     <None Include="shaders\example1.vert" />
+    <None Include="shaders\phongshader.frag" />
+    <None Include="shaders\phongshader.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Binnie.png" />
+    <Image Include="OBJfiles\Survival_BackPack_2\1001_albedo.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

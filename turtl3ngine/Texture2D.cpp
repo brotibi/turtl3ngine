@@ -42,3 +42,22 @@ const int Texture2D::getWidth() {
 const int Texture2D::getHeight() {
 	return this->height;
 }
+
+Texture2D::Texture2D()
+{
+}
+
+void Texture2D::setID(unsigned int ID)
+{
+	this->ID = ID;
+}
+
+void Texture2D::setType(std::string type)
+{
+	this->type = type;
+}
+
+std::string Texture2D::getType()
+{
+	return this->type;
+}

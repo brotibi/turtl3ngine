@@ -4,18 +4,22 @@
 #include <iostream>
 #include <vector>
 #include "Texture2D.h"
+#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "ShaderProgram.h"
+
 class VisualEntity
 {
 private:
 	glm::vec3 position;
 	glm::vec3 direction;
-	Texture2D* texture;
 	std::vector<VisualEntity>* attachedEntities;
+protected:
+	Texture2D* texture;
 public:
-	//VisualEntity();
+	VisualEntity();
 
 
 	VisualEntity(glm::vec3 position) {
@@ -24,7 +28,7 @@ public:
 
 	//~VisualEntity();
 
-	//virtual void render();
+	virtual void render(ShaderProgram& shader) = 0;
 
 	void setPosition(glm::vec3 newPosition) {
 		this->position = newPosition;
@@ -43,16 +47,7 @@ public:
 		this->direction = newAngle;
 	}
 
-	void addEntity(VisualEntity entity) {
-		if(attachedEntities != nullptr) {
-			
-		}
-		else {
-			attachedEntities = new std::vector<VisualEntity>();
-
-			attachedEntities->push_back(entity);
-		}
-	}
+	void addEntity(VisualEntity entity);
 
 	void updateAll() {
 

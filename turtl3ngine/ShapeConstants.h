@@ -2,6 +2,9 @@
 #ifndef SHAPECONSTANTS_H
 #define SHAPECONSTANTS_H
 #include <glad/glad.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 const GLfloat TRIANGLE_VERT_2D[] = {
 		-0.5f, -0.5f, 0.0f,
@@ -66,7 +69,4 @@ float CUBE_VERT_3D[] = {
     -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
     -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 };
-
-
-
 #endif SHAPE_CONSTANTS_H

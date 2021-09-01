@@ -16,11 +16,17 @@
     <Filter Include="Header Files\3D Objects">
       <UniqueIdentifier>{2b4d8fef-4911-4401-a2f0-4f832794cf5b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Examples">
+      <UniqueIdentifier>{768c42b0-4e0b-4202-a91e-ed6cd1f2b932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Object Headers">
+      <UniqueIdentifier>{6b14c0e2-c0f4-4a71-9f65-ea8b5a9c77ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object Impl">
+      <UniqueIdentifier>{f6863207-4464-406b-a242-2e809c095e97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Example.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -28,9 +34,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AppWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Example2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShaderProgram.cpp">
@@ -44,6 +47,21 @@
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Example.cpp">
+      <Filter>Source Files\Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Example2.cpp">
+      <Filter>Source Files\Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Example3.cpp">
+      <Filter>Source Files\Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Mesh.cpp">
+      <Filter>Source Files\Object Impl</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model.cpp">
+      <Filter>Source Files\Object Impl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,13 +95,37 @@
     <ClInclude Include="Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PracticeCube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PracticePhongLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Mesh.h">
+      <Filter>Header Files\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model.h">
+      <Filter>Header Files\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\ObjectStructs.h">
+      <Filter>Header Files\Object Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\example1.frag" />
     <None Include="shaders\example1.vert" />
+    <None Include="shaders\phongshader.frag" />
+    <None Include="shaders\phongshader.vert" />
+    <None Include="OBJfiles\demon\demon.mtl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Binnie.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="OBJfiles\Survival_BackPack_2\1001_albedo.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
