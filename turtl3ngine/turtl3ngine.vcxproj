@@ -161,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="AppWindow.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Lighting.h" />
     <ClInclude Include="ObjectEntity.h" />
     <ClInclude Include="Object\Mesh.h" />
     <ClInclude Include="Object\Model.h" />

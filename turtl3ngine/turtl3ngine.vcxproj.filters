@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Object Impl">
       <UniqueIdentifier>{f6863207-4464-406b-a242-2e809c095e97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Lighting">
+      <UniqueIdentifier>{0035c206-0f84-48af-9508-a373d08cc50b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -112,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="Object\ObjectStructs.h">
       <Filter>Header Files\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting.h">
+      <Filter>Header Files\Lighting</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

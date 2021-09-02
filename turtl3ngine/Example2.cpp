@@ -68,8 +68,8 @@ int main() {
 	glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 	Camera camera = Camera(cameraPos, cameraPos + cameraFront, cameraUp);
 
-	//Model model = Model("./OBJfiles/demon/demon.obj");
-	Model model = Model("./OBJfiles/Survival_BackPack_2/Survival_BackPack_2.fbx");
+	Model model = Model("./OBJfiles/demon/demon.obj");
+	//Model* model = new Model("./OBJfiles/backpack/backpack.obj");
 
 
 	while (!glfwWindowShouldClose(window->getWindow()))
@@ -86,17 +86,17 @@ int main() {
 		//glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
 		// Rotate the entity
-		glm::mat4 trans = glm::mat4(1.0f);
+		//glm::mat4 trans = glm::mat4(1.0f);
 		//trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-		trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+		//trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
 		camera.updateCameraDefMovement(global_deltaTime, window->getWindow(), cameraFront);
 		//glm::mat4 view = camera.getCameraView();
 
-		glm::mat4 projection;
-		projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+		//glm::mat4 projection;
+		//projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
 
-		shaderProgram.setMat4("transform", trans);
+		//shaderProgram.setMat4("transform", trans);
 
 		//glDrawArrays(GL_TRIANGLES, 0, 36);
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

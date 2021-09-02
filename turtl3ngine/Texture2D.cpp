@@ -12,7 +12,7 @@ Texture2D::Texture2D(std::string texturePath) {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	//stbi_set_flip_vertically_on_load(true);
+	stbi_set_flip_vertically_on_load(true);
 	this->textureData = stbi_load(texturePath.c_str(), &(this->width), &(this->height), &(this->nrChannels), 0);
 
 	if (this->textureData)

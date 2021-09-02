@@ -51,7 +51,9 @@ public:
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		model = glm::mat4(1.0f);
+		
 		this->model = glm::translate(this->model, this->getPosition());
+		this->model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 		//shader.use();
 		shader.setMat4("model", this->model);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
