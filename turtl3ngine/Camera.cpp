@@ -8,6 +8,7 @@ Camera::Camera(glm::vec3 cameraPosition, glm::vec3 targetPosition, glm::vec3 upV
 	this->targetPosition = targetPosition;
 	this->upVector = upVector;
 	this->view = glm::lookAt(cameraPosition, targetPosition, upVector);
+	this->front = glm::vec3(0.0f, 0.0f, -1.0f);
 }
 
 glm::mat4 Camera::getCameraView() {
@@ -50,4 +51,5 @@ void Camera::render(ShaderProgram& shader) {
 	shader.use();
 	shader.setMat4("projection", projection);
 	shader.setMat4("view", this->view);
+	shader.setVec3("viewPos", this->getPosition());
 }

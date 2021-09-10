@@ -1,7 +1,7 @@
 #pragma once
 #ifndef MODEL_H
 #define MODEL_H
-#include <stb_image.h>
+#include "../stb_image.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
@@ -17,6 +17,7 @@ public:
         loadModel(path);
     }
     void render(ShaderProgram& shader);
+    void render(ShaderProgram& shader, glm::mat4 local);
 private:
     // model data
     vector<Mesh> meshes;

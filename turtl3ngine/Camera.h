@@ -18,6 +18,7 @@ private:
 	glm::vec3 targetPosition;
 	glm::vec3 upVector;
 	glm::vec3 rightVector;
+	glm::vec3 front;
 	float yaw = -90.f;
 	float pitch = 0.f;
 	glm::mat4 view;

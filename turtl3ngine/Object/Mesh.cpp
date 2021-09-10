@@ -1,6 +1,7 @@
 #pragma once
 #include "Mesh.h"
 #include <string>
+#include <iostream>
 
 void Mesh::initMesh() {
     glGenVertexArrays(1, &VAO);
@@ -29,14 +30,13 @@ void Mesh::initMesh() {
     glBindVertexArray(0);
 }
 
-void Mesh::render(ShaderProgram& shader)
+void Mesh::render(ShaderProgram& shader, glm::mat4 local)
 {
-    //shader.use();
+    shader.use();
     unsigned int diffuseNr = 1;
     unsigned int specularNr = 1;
 
-    shader.setMat4("model", glm::mat4(1.0f));
-
+    shader.setMat4("model", local);
 
     for (unsigned int i = 0; i < textures.size(); i++)
     {
@@ -50,6 +50,8 @@ void Mesh::render(ShaderProgram& shader)
             number = std::to_string(specularNr++);
 
         shader.setFloat(("material." + name + number).c_str(), i);
+        std::cout << ("material." + name + number).c_str() << " " << i << std::endl;
+        
         glBindTexture(GL_TEXTURE_2D, textures[i].id);
     }
     glActiveTexture(GL_TEXTURE0);

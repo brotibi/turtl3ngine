@@ -66,6 +66,9 @@
     <ClCompile Include="Object\Model.cpp">
       <Filter>Source Files\Object Impl</Filter>
     </ClCompile>
+    <ClCompile Include="Lighting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShaderUtils.h">
@@ -126,6 +129,7 @@
     <None Include="shaders\phongshader.frag" />
     <None Include="shaders\phongshader.vert" />
     <None Include="OBJfiles\demon\demon.mtl" />
+    <None Include="shaders\phongShaderLight.frag" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Binnie.png">

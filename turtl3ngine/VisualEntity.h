@@ -16,16 +16,26 @@ private:
 	glm::vec3 position;
 	glm::vec3 direction;
 	std::vector<VisualEntity>* attachedEntities;
+	bool visible = true;
 protected:
 	Texture2D* texture;
 public:
+	bool isVisible() {
+		return this->visible;
+	}
+
+	void setVisibility(bool isVisible) {
+		this->visible = isVisible;
+	}
+
+
 	VisualEntity();
 
 
 	VisualEntity(glm::vec3 position) {
+		this->direction = glm::vec3(0.f);
 		this->position = position;
 	}
-
 	//~VisualEntity();
 
 	virtual void render(ShaderProgram& shader) = 0;
@@ -40,6 +50,10 @@ public:
 
 	glm::vec3 getPosition() {
 		return this->position;
+	}
+
+	glm::vec3 getDirection() {
+		return this->direction;
 	}
 
 

@@ -13,6 +13,7 @@
 #include "Utility.h"
 #include "PracticeCube.h"
 #include "Object/Model.h"
+#include "Lighting.h"
 
 
 using namespace std;
@@ -35,8 +36,10 @@ int main() {
 
 	ShaderProgram phongShader = ShaderProgram("./shaders/phongshader.vert", "./shaders/phongshader.frag");
 
-	//shaderProgram.use();
+	ShaderProgram phongShaderLight = ShaderProgram("./shaders/phongshader.vert", "./shaders/phongShaderLight.frag");
 
+	//phongShader.use();
+	
 
 	//Texture2D texture = Texture2D("./Binnie.png");
 
@@ -68,8 +71,12 @@ int main() {
 	glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 	Camera camera = Camera(cameraPos, cameraPos + cameraFront, cameraUp);
 
-	Model model = Model("./OBJfiles/demon/demon.obj");
-	//Model* model = new Model("./OBJfiles/backpack/backpack.obj");
+	//Model model = Model("./OBJfiles/demon/demon.oobj");
+	//Model model =  Model("./OBJfiles/backpack/backpack.obj");
+	Model model = Model("C:/Users/broti/OneDrive/Documents/3D Models/cube.obj");
+	PointLight light = PointLight(glm::vec3(1.3f, -2.0f, -2.5f));
+	DirectionalLight dLight = DirectionalLight(glm::vec3(-4.3f, 10.0f, 2.5f));
+	dLight.setDirection(glm::vec3(0.5,1.0,0.1));
 
 
 	while (!glfwWindowShouldClose(window->getWindow()))
@@ -88,7 +95,9 @@ int main() {
 		// Rotate the entity
 		//glm::mat4 trans = glm::mat4(1.0f);
 		//trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-		//trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+		trans = glm::rotate(trans, (float)glfwGetTime()/60, glm::vec3(0.0f, 0.01f, 0.0f));
+		
+		//dLight.setDirection(dLight.getDirection()*(float)glfwGetTime());
 
 		camera.updateCameraDefMovement(global_deltaTime, window->getWindow(), cameraFront);
 		//glm::mat4 view = camera.getCameraView();
@@ -102,15 +111,39 @@ int main() {
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		
+		//camera.render(phongShaderLight);
+		//phongShader.setFloat("ambientStrength", .1f);
+		//phongShader.setVec4("lightColor", glm::vec4(0.7f, 0.7f, 0.7f, 1.0f));
+		//phongShader.setVec3("lightPos", glm::vec3(1.2f, 1.0f, 2.0f));
+		//phongShader.setVec3("lightPos", camera.getPosition());
+		//phongShader.setVec3("viewPos", camera.getPosition());
+		//phongShaderLight.setVec3("viewPos", camera.getPosition());
 
-		for (unsigned int i = 0; i < 10; i++) {
-			cube.setPosition(cubePositions[i]);
-			cube.render(phongShader);
+		light.addLighting(phongShader, 1);
+		dLight.addLighting(phongShader, 0);
+
+
+		light.render(phongShaderLight);
+		dLight.render(phongShaderLight);
+
+
+		for (unsigned int i = 8; i < 10; i++) {
+			//cube.setPosition(cubePositions[i]);
+			//cube.render(phongShader);
+			//light2.setPosition(cubePositions[i]);
+			//light2.addLighting(phongShader, i);
+			//light2.render(phongShader);
 		}
+
 
 		model.render(phongShader);
 
 		camera.render(phongShader);
+		camera.render(phongShaderLight);
+		//Slight.addLighting(phongShader);
+		
+
+		
 
 		
 

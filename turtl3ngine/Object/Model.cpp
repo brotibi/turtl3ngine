@@ -44,8 +44,16 @@ unsigned int TextureFromFile(const char* path, const string& directory)
 
 void Model::render(ShaderProgram& shader)
 {
+    shader.use();
+    glm::mat4 model = glm::mat4(1.0f);
+    this->render(shader, model);
+}
+
+void Model::render(ShaderProgram& shader, glm::mat4 local)
+{
+    glm::mat4 model = glm::mat4(1.0f);
     for (unsigned int i = 0; i < meshes.size(); i++)
-        meshes[i].render(shader);
+        meshes[i].render(shader, local);
 }
 
 void Model::loadModel(string path)
